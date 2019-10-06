@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.lucee:antlr:2.7.7" type="repository">
+    <properties maven-id="org.lucee:antlr:2.7.7" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/lucee/antlr/2.7.7/antlr-2.7.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
