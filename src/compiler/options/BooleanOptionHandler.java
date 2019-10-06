@@ -1,15 +1,15 @@
 package compiler.options;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
-
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
-import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.OptionDef;
+import org.kohsuke.args4j.OptionHandlerRegistry;
 import org.kohsuke.args4j.spi.OptionHandler;
 import org.kohsuke.args4j.spi.Parameters;
 import org.kohsuke.args4j.spi.Setter;
+
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 
 public abstract class BooleanOptionHandler extends OptionHandler<Boolean> {
     
@@ -29,8 +29,8 @@ public abstract class BooleanOptionHandler extends OptionHandler<Boolean> {
      *  The class to handle boolean and Boolean options.
      */
     public static void register(Class<? extends BooleanOptionHandler> handler) {
-        CmdLineParser.registerHandler(Boolean.class, handler);
-        CmdLineParser.registerHandler(Boolean.TYPE, handler);
+        OptionHandlerRegistry.getRegistry().registerHandler(Boolean.class, handler);
+        OptionHandlerRegistry.getRegistry().registerHandler(Boolean.TYPE, handler);
     }
     
     protected BooleanOptionHandler(CmdLineParser parser, OptionDef option, Setter<Boolean> setter) {
@@ -79,7 +79,7 @@ public abstract class BooleanOptionHandler extends OptionHandler<Boolean> {
             else if (isFalse(param))
                 setter.addValue(FALSE);
             else 
-                throw new CmdLineException("Illegal value: " + param);
+                throw new CmdLineException(owner, new IllegalArgumentException("Illegal value: " + param));
             
             return 1;
         }

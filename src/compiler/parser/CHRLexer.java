@@ -2,29 +2,12 @@
 
 package compiler.parser;
 
+import antlr.*;
+import antlr.collections.impl.BitSet;
+
 import java.io.InputStream;
-import antlr.TokenStreamException;
-import antlr.TokenStreamIOException;
-import antlr.TokenStreamRecognitionException;
-import antlr.CharStreamException;
-import antlr.CharStreamIOException;
-import antlr.ANTLRException;
 import java.io.Reader;
 import java.util.Hashtable;
-import antlr.CharScanner;
-import antlr.InputBuffer;
-import antlr.ByteBuffer;
-import antlr.CharBuffer;
-import antlr.Token;
-import antlr.CommonToken;
-import antlr.RecognitionException;
-import antlr.NoViableAltForCharException;
-import antlr.MismatchedCharException;
-import antlr.TokenStream;
-import antlr.ANTLRHashString;
-import antlr.LexerSharedInputState;
-import antlr.collections.impl.BitSet;
-import antlr.SemanticException;
 
 @SuppressWarnings(CHRParser.ALL) public final class CHRLexer extends antlr.CharScanner implements CHRTokenTypes, TokenStream
  {
@@ -42,34 +25,34 @@ public CHRLexer(LexerSharedInputState state) {
 	caseSensitiveLiterals = true;
 	setCaseSensitive(true);
 	literals = new Hashtable();
-	literals.put(new ANTLRHashString("constraints", this), new Integer(42));
-	literals.put(new ANTLRHashString("no_history", this), new Integer(52));
-	literals.put(new ANTLRHashString("false", this), new Integer(19));
-	literals.put(new ANTLRHashString("constraint", this), new Integer(41));
-	literals.put(new ANTLRHashString("true", this), new Integer(17));
-	literals.put(new ANTLRHashString("pragma_var", this), new Integer(46));
-	literals.put(new ANTLRHashString("infix", this), new Integer(40));
-	literals.put(new ANTLRHashString("import", this), new Integer(22));
-	literals.put(new ANTLRHashString("private", this), new Integer(34));
-	literals.put(new ANTLRHashString("on", this), new Integer(18));
-	literals.put(new ANTLRHashString("handler", this), new Integer(23));
-	literals.put(new ANTLRHashString("rules", this), new Integer(44));
-	literals.put(new ANTLRHashString("debug", this), new Integer(9));
-	literals.put(new ANTLRHashString("solver", this), new Integer(38));
-	literals.put(new ANTLRHashString("off", this), new Integer(20));
-	literals.put(new ANTLRHashString("null", this), new Integer(71));
-	literals.put(new ANTLRHashString("extends", this), new Integer(27));
-	literals.put(new ANTLRHashString("fail", this), new Integer(57));
-	literals.put(new ANTLRHashString("static", this), new Integer(37));
-	literals.put(new ANTLRHashString("passive", this), new Integer(51));
-	literals.put(new ANTLRHashString("local", this), new Integer(35));
-	literals.put(new ANTLRHashString("pragma", this), new Integer(50));
-	literals.put(new ANTLRHashString("protected", this), new Integer(33));
-	literals.put(new ANTLRHashString("new", this), new Integer(67));
-	literals.put(new ANTLRHashString("option", this), new Integer(7));
-	literals.put(new ANTLRHashString("public", this), new Integer(32));
-	literals.put(new ANTLRHashString("package", this), new Integer(21));
-	literals.put(new ANTLRHashString("variable", this), new Integer(45));
+	literals.put(new ANTLRHashString("constraints", this), Integer.valueOf(42));
+	literals.put(new ANTLRHashString("no_history", this), Integer.valueOf(52));
+	literals.put(new ANTLRHashString("false", this), Integer.valueOf(19));
+	literals.put(new ANTLRHashString("constraint", this), Integer.valueOf(41));
+	literals.put(new ANTLRHashString("true", this), Integer.valueOf(17));
+	literals.put(new ANTLRHashString("pragma_var", this), Integer.valueOf(46));
+	literals.put(new ANTLRHashString("infix", this), Integer.valueOf(40));
+	literals.put(new ANTLRHashString("import", this), Integer.valueOf(22));
+	literals.put(new ANTLRHashString("private", this), Integer.valueOf(34));
+	literals.put(new ANTLRHashString("on", this), Integer.valueOf(18));
+	literals.put(new ANTLRHashString("handler", this), Integer.valueOf(23));
+	literals.put(new ANTLRHashString("rules", this), Integer.valueOf(44));
+	literals.put(new ANTLRHashString("debug", this), Integer.valueOf(9));
+	literals.put(new ANTLRHashString("solver", this), Integer.valueOf(38));
+	literals.put(new ANTLRHashString("off", this), Integer.valueOf(20));
+	literals.put(new ANTLRHashString("null", this), Integer.valueOf(71));
+	literals.put(new ANTLRHashString("extends", this), Integer.valueOf(27));
+	literals.put(new ANTLRHashString("fail", this), Integer.valueOf(57));
+	literals.put(new ANTLRHashString("static", this), Integer.valueOf(37));
+	literals.put(new ANTLRHashString("passive", this), Integer.valueOf(51));
+	literals.put(new ANTLRHashString("local", this), Integer.valueOf(35));
+	literals.put(new ANTLRHashString("pragma", this), Integer.valueOf(50));
+	literals.put(new ANTLRHashString("protected", this), Integer.valueOf(33));
+	literals.put(new ANTLRHashString("new", this), Integer.valueOf(67));
+	literals.put(new ANTLRHashString("option", this), Integer.valueOf(7));
+	literals.put(new ANTLRHashString("public", this), Integer.valueOf(32));
+	literals.put(new ANTLRHashString("package", this), Integer.valueOf(21));
+	literals.put(new ANTLRHashString("variable", this), Integer.valueOf(45));
 }
 
 public Token nextToken() throws TokenStreamException {
