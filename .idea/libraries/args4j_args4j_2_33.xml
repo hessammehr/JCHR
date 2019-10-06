@@ -5,6 +5,8 @@
       <root url="jar://$MAVEN_REPOSITORY$/args4j/args4j/2.33/args4j-2.33.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/args4j-2.33-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
